@@ -1,2 +1,3 @@
-"ng serve"
-"npm run server"
+
+"npm i json-server"?
+"npm run server" (port 5000)
