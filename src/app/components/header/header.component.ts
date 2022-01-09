@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  title: string = 'Task Tracker v1.0';
+  title: string = 'Task Tracker v1.1';
   showTaskEditor!: boolean;
   subscription!: Subscription;
 

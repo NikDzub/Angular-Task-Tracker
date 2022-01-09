@@ -9,6 +9,14 @@
   padding-top: 50px;
   text-align: center;
 }
-.sortBtn {
+.searchContainer {
   text-align: center;
+}
+#searchInput {
+  border: 0px;
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  width: 70%;
 }

@@ -20,16 +20,18 @@ export class AddTaskComponent implements OnInit {
   details!: string;
 
   submitTask() {
-    if (!this.value) {
-      alert('task name is required');
+    if (!this.value || this.value.toString().trim() == '') {
+      console.log(this.value);
+      alert('Please fill valid task name');
       return;
     }
     if (!this.time) {
-      alert('task time is required');
+      alert('Please fill valid task time');
       return;
     }
+
     const newTask: Task = {
-      value: this.value,
+      value: this.value.trim(),
       time: this.time,
       reminder: this.reminder,
       details: this.details,

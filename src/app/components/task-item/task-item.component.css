@@ -1,3 +1,8 @@
+h4,
+p {
+  padding: 0px 10px 0px 10px;
+  word-wrap: break-word;
+}
 .task {
   text-align: left;
   display: flex;
@@ -15,59 +20,40 @@
   text-align: right;
   padding-right: 10px;
   cursor: pointer;
-  color: red;
+  color: crimson;
   transition: 0.3s;
 }
 .delete:hover {
   color: black;
-  background-color: red;
-}
-.bell {
-  color: grey;
-  cursor: pointer;
-  padding: 0px 7px;
-  margin: 5px 0px;
-  transition: 0.3s;
-  margin-right: 10px;
-}
-.bell:hover {
-  color: rgb(255, 251, 0);
-}
-.bell:active {
-  color: black;
-}
-.reminderOn {
-  color: orange;
-}
-.expired {
-  color: grey;
+  background-color: crimson;
 }
 .details {
   font-weight: 200;
   font-size: 0.8rem;
   padding-top: 20px;
 }
-.infoIcon {
+.expired {
   color: grey;
-  cursor: pointer;
-  padding: 0px 7px;
-  margin: 5px 0px;
-  transition: 0.3s;
-  margin-right: 10px;
-}
-.infoIcon:hover {
-  color: yellow;
-}
-.infoActive {
-  color: yellow;
 }
 .iconsContainer {
   background-color: black;
   padding: 5px 5px 5px 5px;
   margin-bottom: 30px;
 }
-h4,
-p {
-  padding: 0px 10px 0px 10px;
-  word-wrap: break-word;
+.taskIcon {
+  padding: 0px 7px;
+  margin: 5px 0px;
+  color: lightgray;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+.taskIcon:hover {
+  color: gold;
+}
+.infoActive {
+  color: gold;
+}
+.reminderOn {
+  color: gold;
 }

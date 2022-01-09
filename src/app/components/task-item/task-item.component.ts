@@ -1,5 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { faTimes, faBell, faInfo } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTimes,
+  faBell,
+  faInfoCircle,
+  faArrowDown,
+} from '@fortawesome/free-solid-svg-icons';
 import { Task } from '../../interfaces/Task';
 
 @Component({
@@ -17,7 +22,7 @@ export class TaskItemComponent implements OnInit {
 
   faTimes = faTimes;
   faBell = faBell;
-  faInfo = faInfo;
+  faInfoCircle = faInfoCircle;
   showInfo = false;
   expired!: boolean;
 

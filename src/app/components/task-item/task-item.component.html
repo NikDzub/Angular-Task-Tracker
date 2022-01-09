@@ -9,7 +9,7 @@
     <fa-icon
       *ngIf="!expired"
       [ngClass]="{ reminderOn: task.reminder }"
-      class="bell"
+      class="taskIcon"
       [icon]="faBell"
       (click)="clickedReminder(task)"
       title="toggle reminder"
@@ -17,8 +17,8 @@
     <fa-icon
       [ngClass]="{ infoActive: showInfo }"
       *ngIf="task.details"
-      class="infoIcon"
-      [icon]="faInfo"
+      class="taskIcon"
+      [icon]="faInfoCircle"
       (click)="clickedInfo(task)"
       title="toggle details"
     ></fa-icon>

@@ -34,4 +34,7 @@ export class TaskService {
   editTask(task: Task): Observable<Task> {
     return this.http.put<Task>(this.api, task, httpOptions);
   }
+  searchTasks() {
+    return this.http.get<Task[]>(this.api);
+  }
 }
