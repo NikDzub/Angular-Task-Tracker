@@ -1,2 +1,2 @@
-ng serve
-npm run server
+"ng serve"
+"npm run server"
