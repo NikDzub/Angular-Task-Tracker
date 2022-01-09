@@ -1,0 +1,19 @@
+<div class="tasks">
+  <app-add-task (onAddTask)="addTask($event)"></app-add-task>
+  <div class="sortBtn" *ngIf="tasks.length">
+    <app-button
+      text="Sort by closest"
+      color="grey"
+      (click)="sortTasks()"
+    ></app-button>
+  </div>
+  <app-task-item
+    *ngFor="let task of tasks"
+    class="task"
+    [task]="task"
+    (onDeleteTask)="deleteTask(task)"
+    (onToggleReminder)="toggleReminder(task)"
+  >
+  </app-task-item>
+  <p *ngIf="tasks.length == 0" class="noTasks">(no tasks yet)</p>
+</div>

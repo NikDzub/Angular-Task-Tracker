@@ -1,0 +1,31 @@
+<div class="task" [ngClass]="{ expired: expired }">
+  <fa-icon
+    class="delete"
+    [icon]="faTimes"
+    (click)="clickedDelete(task)"
+    title="delete task"
+  ></fa-icon>
+  <div class="iconsContainer">
+    <fa-icon
+      *ngIf="!expired"
+      [ngClass]="{ reminderOn: task.reminder }"
+      class="bell"
+      [icon]="faBell"
+      (click)="clickedReminder(task)"
+      title="toggle reminder"
+    ></fa-icon>
+    <fa-icon
+      [ngClass]="{ infoActive: showInfo }"
+      *ngIf="task.details"
+      class="infoIcon"
+      [icon]="faInfo"
+      (click)="clickedInfo(task)"
+      title="toggle details"
+    ></fa-icon>
+  </div>
+  <h4>
+    {{ task.value | uppercase }}
+  </h4>
+  <p>Due {{ task.time.replace("T", " ") }}</p>
+  <p *ngIf="showInfo" class="details">{{ task.details }}</p>
+</div>

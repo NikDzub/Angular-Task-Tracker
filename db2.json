@@ -1,0 +1,32 @@
+{
+  "tasks": [
+    {
+      "value": "Change car oil",
+      "time": "2022-01-10T10:24",
+      "reminder": true,
+      "details": "Straight weight oil viscosity levels (5, 10, 15, 20, 30, 40, 50, etc.) have a number, often followed by the letter \"W\". The \"W\" signifies the low-temperature pour character of the oil and also its minimum viscosity at 212 °F.",
+      "id": 1
+    },
+    {
+      "value": "inspect tire wear",
+      "time": "2022-06-22T11:27",
+      "reminder": false,
+      "details": "The easiest way to check wear on your tire is with a penny. Place a penny upside down in between the tire tread as shown. If you can see the top of Lincoln's head, the treads are worn and tire replacement is needed. A quick and easy way to check your tire wear is with a tread depth gauge.",
+      "id": 3
+    },
+    {
+      "value": "adjust car alignment",
+      "time": "2022-10-18T08:28",
+      "reminder": false,
+      "details": "",
+      "id": 4
+    },
+    {
+      "value": "inspect engine",
+      "time": "2022-01-08T08:28",
+      "reminder": true,
+      "details": "A scheduled overhaul is almost always less expensive than a new engine. Rebuilding to repair is usually cheaper than buying a new engine, too. You may save up to half of the cost of a new engine by rebuilding. However, sometimes rebuilding is not a good option.",
+      "id": 5
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<header>
+  <h3>{{ title }}</h3>
+  <div>
+    <app-button
+      color="{{ showTaskEditor ? 'red' : 'rgb(50, 167, 60)' }}"
+      text="{{ showTaskEditor ? 'Close' : 'Add New Task' }}"
+      (btnClick)="toggleBtn()"
+    ></app-button>
+  </div>
+</header>

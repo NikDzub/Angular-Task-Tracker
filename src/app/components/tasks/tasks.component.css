@@ -1,0 +1,14 @@
+.tasks {
+  background-color: whitesmoke;
+  padding: 10px;
+  margin: 0px;
+}
+.noTasks {
+  font-size: 0.7rem;
+  font-weight: 200;
+  padding-top: 50px;
+  text-align: center;
+}
+.sortBtn {
+  text-align: center;
+}

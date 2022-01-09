@@ -1,0 +1,54 @@
+<form *ngIf="showTaskEditor" (ngSubmit)="submitTask()">
+  <div class="taskForm">
+    <div><label for="value">Task *</label></div>
+    <div>
+      <input
+        autocomplete="off"
+        name="value"
+        id="value"
+        type="text"
+        placeholder=""
+        [(ngModel)]="value"
+      />
+    </div>
+  </div>
+  <div class="taskForm">
+    <div><label for="time">Due *</label></div>
+    <div>
+      <input name="time" id="time" type="datetime-local" [(ngModel)]="time" />
+    </div>
+  </div>
+  <div class="taskForm">
+    <div><label for="details">Details</label></div>
+    <div>
+      <input
+        autocomplete="off"
+        name="details"
+        id="details"
+        type="text"
+        placeholder="optional"
+        [(ngModel)]="details"
+      />
+    </div>
+  </div>
+  <div class="taskForm">
+    <div>
+      <span>
+        <fa-icon
+          [icon]="faBell"
+          (click)="reminderToggle()"
+          [ngClass]="{ reminderOn: reminder }"
+          class="bell"
+        ></fa-icon>
+        <input
+          class="checkbox"
+          name="reminder"
+          id="reminder"
+          type="checkbox"
+          [(ngModel)]="reminder"
+        />
+      </span>
+    </div>
+  </div>
+  <input class="submit" type="submit" value="Confirm" />
+</form>
