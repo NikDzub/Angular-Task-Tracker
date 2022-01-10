@@ -32,9 +32,7 @@ export class TaskService {
     return this.http.post<Task>(this.api, task, httpOptions);
   }
   editTask(task: Task): Observable<Task> {
-    return this.http.put<Task>(this.api, task, httpOptions);
-  }
-  searchTasks() {
-    return this.http.get<Task[]>(this.api);
+    let url = `${this.api}/${task.id}`;
+    return this.http.put<Task>(url, task, httpOptions);
   }
 }

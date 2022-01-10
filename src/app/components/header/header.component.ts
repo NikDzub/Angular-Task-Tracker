@@ -9,6 +9,14 @@ import { UiService } from '../../services/ui.service';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
+  title: string = 'Task Tracker v1.2';
+  showTaskEditor!: boolean;
+  subscription!: Subscription;
+
+  toggleBtn() {
+    this.uiService.toggleAddTask();
+  }
+
   constructor(private uiService: UiService) {
     this.subscription = this.uiService.onToggle().subscribe((bool) => {
       this.showTaskEditor = bool;
@@ -16,12 +24,4 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {}
-
-  title: string = 'Task Tracker v1.1';
-  showTaskEditor!: boolean;
-  subscription!: Subscription;
-
-  toggleBtn() {
-    this.uiService.toggleAddTask();
-  }
 }

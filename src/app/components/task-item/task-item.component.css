@@ -15,7 +15,7 @@ p {
   border-bottom: 3px solid black;
 }
 .delete {
-  background-color: black;
+  background-color: darkslategray;
   position: relative;
   text-align: right;
   padding-right: 10px;
@@ -56,4 +56,18 @@ p {
 }
 .reminderOn {
   color: gold;
+}
+.onEdit {
+  color: gold;
+}
+.editor {
+  padding: 5px;
+}
+.editor input {
+  border: 0px;
+  padding: 5px;
+  margin: 5px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  width: 90%;
 }

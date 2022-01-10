@@ -5,6 +5,8 @@ import { Subject, Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class UiService {
+  constructor() {}
+
   private addTaskVisibility: boolean = false;
   private subject = new Subject<any>();
 
@@ -15,5 +17,4 @@ export class UiService {
   onToggle(): Observable<any> {
     return this.subject.asObservable();
   }
-  constructor() {}
 }

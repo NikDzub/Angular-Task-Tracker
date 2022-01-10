@@ -10,23 +10,30 @@ import { TaskService } from '../../services/task.service';
 export class TasksComponent implements OnInit {
   searchString?: string;
   tasks: Task[] = [];
-  tasksToShow: Task[] = [];
-  constructor(private taskService: TaskService) {}
 
   loadTasks() {
     this.taskService.getTasks().subscribe((tasks) => {
-      this.tasks = tasks;
-      this.tasksToShow = tasks.sort((a, b) => {
-        return (
-          Math.abs(new Date(a.time).getTime()) -
-          Math.abs(new Date(b.time).getTime())
-        );
-      });
+      if (!this.searchString) {
+        this.tasks = tasks.sort((a, b) => {
+          return (
+            Math.abs(new Date(a.time).getTime()) -
+            Math.abs(new Date(b.time).getTime())
+          );
+        });
+      } else {
+        let searchKey = this.searchString.trim();
+        this.tasks = tasks
+          .filter((task) => {
+            return task.value.toLowerCase().includes(searchKey.toLowerCase());
+          })
+          .sort((a, b) => {
+            return (
+              Math.abs(new Date(a.time).getTime()) -
+              Math.abs(new Date(b.time).getTime())
+            );
+          });
+      }
     });
-  }
-
-  ngOnInit(): void {
-    this.loadTasks();
   }
 
   deleteTask(task: Task) {
@@ -34,26 +41,28 @@ export class TasksComponent implements OnInit {
       this.loadTasks();
     });
   }
+
   toggleReminder(task: Task) {
     task.reminder = !task.reminder;
-    this.taskService.toggleReminder(task).subscribe(() => {
-      //this.loadTasks();
-    });
+    this.taskService.toggleReminder(task).subscribe(() => {});
   }
+
   addTask(task: Task) {
     this.taskService.addTask(task).subscribe((task) => {
       this.tasks.push(task);
-      this.filterName();
+      this.loadTasks();
     });
   }
-  filterName() {
-    if (this.searchString) {
-      let searchKey = this.searchString.trim();
-      this.tasksToShow = this.tasks.filter((task) => {
-        return task.value.toLowerCase().includes(searchKey.toLowerCase());
-      });
-    } else {
+
+  editTask(task: Task) {
+    this.taskService.editTask(task).subscribe(() => {
       this.loadTasks();
-    }
+    });
+  }
+
+  constructor(private taskService: TaskService) {}
+
+  ngOnInit(): void {
+    this.loadTasks();
   }
 }

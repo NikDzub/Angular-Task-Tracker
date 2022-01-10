@@ -15,17 +15,51 @@
       title="toggle reminder"
     ></fa-icon>
     <fa-icon
-      [ngClass]="{ infoActive: showInfo }"
+      [ngClass]="{ infoActive: showInfo && !editor }"
       *ngIf="task.details"
       class="taskIcon"
       [icon]="faInfoCircle"
       (click)="clickedInfo(task)"
       title="toggle details"
     ></fa-icon>
+    <fa-icon
+      [ngClass]="{ onEdit: editor }"
+      class="taskIcon"
+      [icon]="faPen"
+      (click)="clickedEdit(task)"
+      title="edit"
+    ></fa-icon>
   </div>
-  <h4>
-    {{ task.value | uppercase }}
-  </h4>
-  <p>Due {{ task.time.replace("T", " ") }}</p>
-  <p *ngIf="showInfo" class="details">{{ task.details }}</p>
+  <div *ngIf="!editor">
+    <h4>
+      {{ task.value | uppercase }}
+    </h4>
+    <p>Due {{ task.time.replace("T", " ") }}</p>
+    <p *ngIf="showInfo" class="details">{{ task.details }}</p>
+  </div>
+  <div *ngIf="editor" class="editor">
+    <input
+      type="text"
+      value="{{ task.value }}"
+      [(ngModel)]="editedValue"
+      placeholder="Task*"
+    />
+    <input
+      type="datetime-local"
+      value="{{ task.time }}"
+      [(ngModel)]="editedTime"
+    />
+    <input
+      type="text"
+      value="{{ task.details }}"
+      [(ngModel)]="editedDetails"
+      placeholder="optional"
+    />
+    <app-button
+      color="rgb(50, 167, 60)"
+      text="Save"
+      (click)="clickedSave(task)"
+      [ngStyle]="{ 'padding-left': '5px' }"
+    ></app-button>
+  </div>
 </div>

@@ -12,12 +12,19 @@ import { faBell } from '@fortawesome/free-solid-svg-icons';
 export class AddTaskComponent implements OnInit {
   @Output() onAddTask: EventEmitter<Task> = new EventEmitter();
 
-  subscription!: Subscription;
   faBell = faBell;
+
+  subscription!: Subscription;
+  showTaskEditor!: boolean;
+
   value!: string;
   time!: string;
   reminder: boolean = false;
   details!: string;
+
+  reminderToggle() {
+    this.reminder = !this.reminder;
+  }
 
   submitTask() {
     if (!this.value || this.value.toString().trim() == '') {
@@ -29,26 +36,17 @@ export class AddTaskComponent implements OnInit {
       alert('Please fill valid task time');
       return;
     }
-
     const newTask: Task = {
       value: this.value.trim(),
       time: this.time,
       reminder: this.reminder,
       details: this.details,
     };
-
     this.onAddTask.emit(newTask);
-
     this.value = '';
     this.reminder = false;
     this.time = '';
     this.details = '';
-  }
-
-  showTaskEditor!: boolean;
-
-  reminderToggle() {
-    this.reminder = !this.reminder;
   }
 
   constructor(private uiService: UiService) {

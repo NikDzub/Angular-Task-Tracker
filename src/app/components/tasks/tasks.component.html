@@ -5,18 +5,18 @@
       id="searchInput"
       [(ngModel)]="searchString"
       autocomplete="off"
-      (input)="filterName()"
+      (input)="loadTasks()"
       placeholder="Search"
     />
   </div>
-
   <app-task-item
-    *ngFor="let task of tasksToShow"
+    *ngFor="let task of tasks"
     class="task"
     [task]="task"
     (onDeleteTask)="deleteTask(task)"
     (onToggleReminder)="toggleReminder(task)"
+    (onEditTask)="editTask(task)"
   >
   </app-task-item>
-  <p *ngIf="tasksToShow.length == 0" class="noTasks">(no tasks found)</p>
+  <p *ngIf="tasks.length == 0" class="noTasks">(no tasks found)</p>
 </div>
