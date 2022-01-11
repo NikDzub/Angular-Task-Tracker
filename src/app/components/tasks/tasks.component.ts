@@ -60,6 +60,26 @@ export class TasksComponent implements OnInit {
     });
   }
 
+  alarmReminder(tasks: Task[]) {
+    tasks.forEach((task) => {
+      let al = true;
+      if (task.reminder) {
+        console.log(task);
+        let taskTime = new Date(task.time);
+        if (taskTime.getTime() > new Date().getTime()) {
+          let mili = taskTime.getTime() - new Date().getTime();
+          console.log(mili);
+          setTimeout(() => {
+            if (al) {
+              al = false;
+              alert('alarm');
+            }
+          }, mili);
+        }
+      }
+    });
+  }
+
   constructor(private taskService: TaskService) {}
 
   ngOnInit(): void {

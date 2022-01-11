@@ -35,4 +35,11 @@ export class TaskService {
     let url = `${this.api}/${task.id}`;
     return this.http.put<Task>(url, task, httpOptions);
   }
+  setAlarm(task: Task) {
+    if (task.reminder) {
+      setTimeout(() => {
+        alert('alert');
+      }, 2000);
+    }
+  }
 }

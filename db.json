@@ -1,19 +1,6 @@
 {
   "tasks": [
     {
-      "value": "Change car oil",
-      "time": "2022-01-09T15:19",
-      "reminder": true,
-      "id": 1
-    },
-    {
-      "value": "inspect tire wear",
-      "time": "2022-01-07T15:15",
-      "reminder": false,
-      "details": "The easiest way to check wear on your tire is with a penny. Place a penny upside down in between the tire tread as shown. If you can see the top of Lincoln's head, the treads are worn and tire replacement is needed. A quick and easy way to check your tire wear is with a tread depth gauge",
-      "id": 2
-    },
-    {
       "value": "inspect engine",
       "time": "2024-06-09T20:19",
       "reminder": false,
@@ -21,11 +8,10 @@
       "id": 3
     },
     {
-      "value": "inspect brakes",
-      "time": "2023-06-15T19:32",
+      "value": "fdg",
+      "time": "2025-03-21T10:31",
       "reminder": true,
-      "id": 4,
-      "details": ""
+      "id": 4
     }
   ]
 }

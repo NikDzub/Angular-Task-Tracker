@@ -2,6 +2,7 @@
   <h3>{{ title }}</h3>
   <div>
     <app-button
+      *ngIf="hasRouth('/')"
       color="{{ showTaskEditor ? 'crimson' : 'rgb(50, 167, 60)' }}"
       text="{{ showTaskEditor ? 'Close Editor' : 'Add New' }}"
       (btnClick)="toggleBtn()"

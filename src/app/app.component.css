@@ -8,4 +8,6 @@
   border-bottom: 3px solid black;
   margin-bottom: 100px;
   border-radius: 5px;
+  background-color: lightgray;
+  min-height: 450px;
 }

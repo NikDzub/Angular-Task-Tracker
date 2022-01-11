@@ -1,0 +1,20 @@
+.active {
+  color: gold;
+}
+.navigation {
+  padding: 7px;
+  background-color: black;
+}
+.icon {
+  padding: 0px 7px;
+  margin: 5px 0px;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-right: 10px;
+}
+.icon:hover {
+  color: gold;
+}
+a {
+  color: lightgray;
+}
